@@ -118,6 +118,7 @@ class SimDiffSetup:
 
     def ideal_task_duration(self, task_id, resource_id, num_tasks_in_batch):
         # calculate duration based on defined distribution for the resource allocation
+        print(self.task_resource[task_id][resource_id])
         [duration] = self.task_resource[task_id][resource_id].generate_sample(1)
 
         if num_tasks_in_batch == 0:
