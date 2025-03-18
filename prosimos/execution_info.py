@@ -38,6 +38,7 @@ class TaskEvent:
         self.batch_id = batch_id
 
         if resource_available_at is not None:
+            print(resource_available_at)
             # Time moment in seconds from beginning, i.e., first event has time = 0
             self.enabled_at = enabled_at
             # Datetime of the time-moment calculated from the starting simulation datetime
@@ -49,6 +50,9 @@ class TaskEvent:
             self.started_datetime = bpm_env.simulation_datetime_from(self.started_at)
 
             # Ideal duration from the distribution-function if allocate resource doesn't rest
+            print(task_id)
+            print(resource_id)
+            print(num_tasks_in_batch)
             self.ideal_duration = bpm_env.sim_setup.ideal_task_duration(task_id, resource_id, num_tasks_in_batch)
             # Actual duration adding the resource resting-time according to their calendar
             self.real_duration = bpm_env.sim_setup.real_task_duration(self.ideal_duration, self.resource_id,
