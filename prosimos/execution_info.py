@@ -38,6 +38,7 @@ class TaskEvent:
         self.batch_id = batch_id
 
         if resource_available_at is not None:
+            print('ok2 ')
             print(resource_available_at)
             # Time moment in seconds from beginning, i.e., first event has time = 0
             self.enabled_at = enabled_at
@@ -50,6 +51,7 @@ class TaskEvent:
             self.started_datetime = bpm_env.simulation_datetime_from(self.started_at)
 
             # Ideal duration from the distribution-function if allocate resource doesn't rest
+            print('ok3')
             print(task_id)
             print(resource_id)
             print(num_tasks_in_batch)
